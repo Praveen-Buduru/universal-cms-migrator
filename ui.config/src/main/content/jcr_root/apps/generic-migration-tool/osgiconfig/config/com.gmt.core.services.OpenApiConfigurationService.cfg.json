@@ -1,0 +1,4 @@
+{
+  "apiKey":"$[secret:OPEN_API_KEY]",
+  "endpoint":"$[env:OPEN_API_ENDPOINT]"
+}

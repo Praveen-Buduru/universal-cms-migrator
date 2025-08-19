@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:description="Convert Web Pages into AEM pages"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Generic Migration Tool"
+    href="/apps/generic-migration-tool/components/generic-page-upload.html"
+    icon="globe"
+    id="generic-migration-tool"
+    target="_blank"/>

@@ -1,0 +1,38 @@
+.color--primary {
+    color: #1e5fbe;
+}
+
+.font--normal {
+    font-weight: normal;
+}
+
+.loading {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(245 243 243 / 40%);
+; /* screen fade */
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loading::before {
+    content: "";
+    width: 150px;
+    height: 150px;
+    background: url(../../clientlib-base/resources/loader.gif) no-repeat center center;
+    background-size: contain;
+}
+
+/* Control visibility */
+.loading--show {
+    display: flex !important;
+}
+
+.loading--hide {
+    display: none !important;
+}
