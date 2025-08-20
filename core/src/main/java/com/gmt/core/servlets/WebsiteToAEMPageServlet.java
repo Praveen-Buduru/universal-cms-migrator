@@ -18,6 +18,8 @@ import org.jsoup.nodes.Element;
 import org.osgi.framework.Constants;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.jcr.Node;
 import javax.jcr.RepositoryException;
@@ -41,12 +43,18 @@ import java.util.Objects;
 )
 public class WebsiteToAEMPageServlet extends SlingAllMethodsServlet {
 
+    private transient final Logger log = LoggerFactory.getLogger(WebsiteToAEMPageServlet.class);
+
     @Reference
     private transient OpenApiConfigurationService openApiConfigurationService;
 
     @Override
     protected void doPost(SlingHttpServletRequest request, SlingHttpServletResponse response)
             throws ServletException, IOException {
+
+        log.info("Resolved OpenAI endpoint: {}", openApiConfigurationService.getEndpoint());
+        log.info("Resolved OpenAI apiKey (length only): {}", openApiConfigurationService.getApiKey() != null ? openApiConfigurationService.getApiKey().length() : 0);
+
 
         String excelPath = request.getParameter("excelPath");
         String parentPath = request.getParameter("pagePath");
